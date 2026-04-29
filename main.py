@@ -11,7 +11,7 @@ def input_lst_temperature(lst_temp):
     month = int(input("Введите текущий номер месяца (1-12) -> "))
     year = int(input("Введите текущий год: "))
 
-    if 1970 <= year <= 2026:
+    if not 1970 <= year <= 2026:
         return 
 
     if not 1 <= month <= 12:
@@ -34,8 +34,16 @@ def input_lst_temperature(lst_temp):
             for _ in range(28):
                 lst_temp.append(randint(-30,0))
 
-
     
+def output_temperature_lst(lst_temp):
+    print(f"В вашем списке находится {len(lst_temp)} значений температур")
+
+    print("ВАШ СПИСОК ТЕМПЕРАТУР: ")
+    print("="*40)
+    for el in lst_temp:
+        print(el, end=", ")
+    print()
+    print("="*40)
 
 
 
@@ -45,3 +53,7 @@ def main():
     lst_temp = []
 
     input_lst_temperature(lst_temp)
+
+    output_temperature_lst(lst_temp)
+
+main()
